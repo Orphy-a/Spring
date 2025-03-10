@@ -41,7 +41,8 @@ public class App
 
         Greeting greetingBean = (Greeting) context.getBean("ggg");
         greetingBean.show();
-
+        
+        // 테스트
 
         /// /////////////////////////////////////////////////
         // IoC/DI 기법을 이용한 객체 실습
