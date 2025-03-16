@@ -31,4 +31,5 @@ public class Computer {
         ram.show();
         hdd.show();
     }
+
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+  <h3>Thymeleaf 실습</h3>
+
+  <a href="/ch06/"></a>
+
+  <h4>thymeleaf</h4>
+  <p>[[${str1}]]</p>
+  <p th:text="${str2}">내용출력</p>
+
+  <h3>thymeleaf 조건문</h3>
+  <p>
+    <span th:if="${user1.name == '홍길동'}">user1 이름은 홍길동 입니다.</span>
+    <span th:if="${user1.name == '김유신'}">user1 이름은 김유신 입니다.</span>
+  </p>
+  <p>
+    <span th:if="${user1.age < 20}">user1의 나이는 20세 미만입니다.</span>
+    <span th:unless="${user1.age < 20}">user1의 나이는 20세 이상입니다.</span>
+  </p>
+
+  <p th:switch="${user2.age >= 20}">
+    <span th:case="true">u2는 20세 이상입니다.</span>
+    <span th:case="false">u2는 20세 미만입니다.</span>
+  </p>
+
+  <h3>thymeleaf 반복문</h3>
+  <table border="1">
+    <tr th:each="user : ${users}">
+      <td>[[${user.uid}]]</td>
+      <td>[[${user.name}]]</td>
+      <td th:text="${user.hp}">휴대폰</td>
+      <td th:text="${user.age}">나이</td>
+    </tr>
+  </table>
+
+  <h3>thymeleaf 링크</h3>
+  <a th:href="@{/sub1/hello}">hello</a>
+  <a th:href="@{/sub1/welcome}">welcome</a>
+  <a th:href="@{/sub1/greeting}">greeting</a>
+
+
+  <h3>thymeleaf include</h3>
+  <th:block th:include="/inc/_header"></th:block>
+  <th:block th:include="/inc/_footer"></th:block>
+
+  <div th:insert="/inc/_header"></div>
+  <div th:insert="/inc/_footer"></div>
+
+  <div th:replace="~{inc/_header}"></div>
+  <div th:replace="~{inc/_footer}"></div>
+
+  <th:block th:include="~{inc/template::_header}"></th:block>
+  <th:block th:include="~{inc/template::_footer}"></th:block>
+
+  <!-- 타임리프 레이아웃 -->
+
+
+</body>
+</html>

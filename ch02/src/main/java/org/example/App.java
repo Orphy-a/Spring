@@ -31,6 +31,8 @@ public class App
         //////////////////////////////////////////////////////
         // 스프링 컨테이너 객체 생성
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        
+
 
         // 객체 주입 방식
         Hello helloBean = context.getBean(Hello.class);
@@ -41,8 +43,9 @@ public class App
 
         Greeting greetingBean = (Greeting) context.getBean("ggg");
         greetingBean.show();
-        
-        // 테스트
+
+
+
 
         /// /////////////////////////////////////////////////
         // IoC/DI 기법을 이용한 객체 실습
