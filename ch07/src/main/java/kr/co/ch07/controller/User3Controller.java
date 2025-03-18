@@ -48,7 +48,12 @@ public class User3Controller {
 
     }
 
-    @PostMapping
+    @GetMapping("/user3/modify")
+    public String modify(){
+        return "/user3/modify";
+    }
+
+    @PostMapping("/user3/modify")
     public String modify(User3DTO user3DTO, Model model){
 
 
