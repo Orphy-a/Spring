@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>user4::list</title>
+</head>
+<body>
+<h3>user5 목록</h3>
+<a th:href="@{/}">처음으로</a>
+<a th:href="@{/user5/register}">등록하기</a>
+<a th:href="@{/user5/modify}">수정</a>
+<table border="1">
+    <tr>
+        <th>회원번호</th>
+        <th>이름</th>
+        <th>성별</th>
+        <th>나이</th>
+        <th>주소</th>
+        <th>관리</th>
+    </tr>
+
+    <tr th:each="user5 : ${user5dtoList}">
+        <td th:text="${user5.seq}"></td>
+        <td th:text="${user5.name}"></td>
+        <td th:text="${user5.gender}"></td>
+        <td th:text="${user5.age}"></td>
+        <td th:text="${user5.addr}"></td>
+        <td>
+            <a th:href="@{/user5/modify(seq=${user5.seq})}">수정</a>
+            <a href="#">삭제</a>
+        </td>
+    </tr>
+
+</table>
+</body>
+</html>

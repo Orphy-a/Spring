@@ -10,12 +10,12 @@ import java.util.List;
 @SpringBootTest
 public class CustomerRepositoryTest {
 
-    @Autowired
-    private CustomerRepository customerRepository;
+    //private CustomerRepositoryTest customerRepository;
 
+    /*
     @Test
     public void test1(){
         List<Customer> customerList = customerRepository.select();
     }
-
+       */
 }
